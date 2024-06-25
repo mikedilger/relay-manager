@@ -1,0 +1,23 @@
+[package]
+name = "relay-manager"
+version = "0.1.0"
+edition = "2021"
+authors = ["Mike Dilger <mike@mikedilger.com>"]
+description = "Relay management command line tool"
+repository = "https://github.com/mikedilger/relay-manager"
+keywords = [ "nostr" ]
+license = "MIT"
+default-run = "relay-manager"
+
+[dependencies]
+base64 = "0.22"
+colorful = "0.2"
+futures-util = "0.3"
+http = "1.1"
+lazy_static = "1.4"
+pocket-types = { git = "https://github.com/mikedilger/pocket", branch = "master" }
+reqwest = "0.12"
+secp256k1 = { version = "0.29", features = [ "hashes", "global-context", "rand-std", "serde" ] }
+serde = { version = "1.0", features = [ "derive" ] }
+serde_json = "1.0"
+tokio = { version = "1", features = ["full"] }
