@@ -11,13 +11,14 @@ default-run = "relay-manager"
 
 [dependencies]
 base64 = "0.22"
-colorful = "0.2"
-futures-util = "0.3"
+bitcoin_hashes = "0.14"
+dirs = "5.0"
+hex = "0.4"
 http = "1.1"
-lazy_static = "1.4"
-pocket-types = { git = "https://github.com/mikedilger/pocket", branch = "master" }
-reqwest = "0.12"
-secp256k1 = { version = "0.29", features = [ "hashes", "global-context", "rand-std", "serde" ] }
+nostr-types = { git = "https://github.com/mikedilger/nostr-types", branch = "master" }
+reqwest = { version = "0.12", features = [ "blocking", "rustls-tls-native-roots" ] }
+rpassword = "7.2"
 serde = { version = "1.0", features = [ "derive" ] }
 serde_json = "1.0"
 tokio = { version = "1", features = ["full"] }
+zeroize = "1.5"
