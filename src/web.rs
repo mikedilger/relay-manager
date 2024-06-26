@@ -6,6 +6,8 @@ use serde_json::Value;
 use std::time::Duration;
 
 pub fn post(uri: &Uri, body: String) -> Result<Value, Error> {
+    eprintln!("CMD: {}", body);
+
     let host = {
         let authority = uri.authority().expect("Has no hostname").as_str();
         authority
