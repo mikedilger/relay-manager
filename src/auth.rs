@@ -25,5 +25,5 @@ pub fn auth(uri: &Uri, payload: &str) -> Result<String, Error> {
     let event = signer.sign_event(pre_event)?;
     let event_string = serde_json::to_string(&event)?;
     let event_base64 = base64::engine::general_purpose::STANDARD.encode(&event_string);
-    Ok(format!("nostr {}", event_base64))
+    Ok(format!("Nostr {}", event_base64))
 }
