@@ -13,11 +13,13 @@ pub fn load_signer() -> Result<KeySigner, Error> {
     let epk_bytes = match std::fs::read(&epk_file) {
         Ok(bytes) => bytes,
         Err(e) => {
-            eprintln!("{}", e);
-            panic!(
-                "Could not find your encrypted private key in {}",
-                epk_file.display()
+            eprintln!(
+                "Could not find your encrypted private key in {}: {}",
+                epk_file.display(),
+                e
             );
+            let epk = rpassword::prompt_password("ncryptsec1: ").unwrap();
+            epk.as_bytes().to_vec()
         }
     };
     let epk_string = String::from_utf8(epk_bytes)?;
