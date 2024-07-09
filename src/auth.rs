@@ -17,7 +17,6 @@ pub fn auth(uri: &Uri, payload: &str) -> Result<String, Error> {
         kind: EventKind::HttpAuth,
         tags: vec![
             Tag::new(&["u", &format!("{}", uri)]),
-            Tag::new(&["method", "POST"]),
             Tag::new(&["payload", &payload_hash]),
         ],
         content: "",
