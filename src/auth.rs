@@ -20,7 +20,7 @@ pub fn auth(uri: &Uri, payload: &str) -> Result<String, Error> {
             Tag::new(&["method", "POST"]),
             Tag::new(&["payload", &payload_hash]),
         ],
-        content: payload.to_owned(),
+        content: "",
     };
     let event = signer.sign_event(pre_event)?;
     let event_string = serde_json::to_string(&event)?;
