@@ -13,7 +13,7 @@ pub fn auth(uri: &Uri, payload: &str) -> Result<String, Error> {
 
     let pre_event = PreEvent {
         pubkey: signer.public_key(),
-        created_at: Unixtime::now().unwrap(),
+        created_at: Unixtime::now(),
         kind: EventKind::HttpAuth,
         tags: vec![
             Tag::new(&["u", &format!("{}", uri)]),
